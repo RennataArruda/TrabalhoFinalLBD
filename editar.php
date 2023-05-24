@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-md-4 mb-3">
             <label style="color: #333;">Código:</label>
-            <input type="text" name="cod_veiculo" disabled value="<?php print $row->cod_veiculo;?>" class="form-control">
+            <input type="text" name="cod_veiculo" readonly value="<?php print $row->cod_veiculo;?>" class="form-control">
         </div>
 
         <div class="col-md-4 mb-3">
