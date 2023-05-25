@@ -59,14 +59,15 @@ switch ($_REQUEST["acao"]) {
             print "<script>location.href='?page=listar';</script>";
         }
 
-
-
-
         break;
 
     case 'excluir':
+        $confirmacao = "<script>if(!!confirm('Tem certeza que deseja excluir este cadastro?'))
+            {window.location.href='?page=salvar&acao=excluirConfirmado&idveiculo=" . $_REQUEST["idveiculo"] . "';}</script>";
+        echo $confirmacao;
+        break;
+    case 'excluirConfirmado':
         $sql = "DELETE FROM veiculo WHERE idveiculo=".$_REQUEST["idveiculo"];
-
         $res = $conn->query($sql);
         if ($res==true) {
             print "<script>alert('Cadastro excluído com sucesso!.');</script>";
@@ -76,6 +77,7 @@ switch ($_REQUEST["acao"]) {
             print "<script>location.href='?page=listar';</script>";
         }
         break;
+    
 }
 
     
